@@ -4,21 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aljone Arenas | DevOps Support & Automation</title>
-    <style>
+        <style>
         :root {
             --primary: #1a73e8; /* Google Blue */
             --dark: #202124;
             --light: #f8f9fa;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark); margin: 0; padding: 0; background: var(--light); }
-        header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
+    
+        /* 1. DEFINE THE ANIMATION */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: var(--dark); 
+            margin: 0; 
+            padding: 0; 
+            background: var(--light); 
+        }
+    
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 3rem 1rem; 
+            text-align: center;
+            /* Apply animation to header */
+            animation: fadeInUp 0.8s ease-out; 
+        }
+    
         .container { max-width: 900px; margin: auto; padding: 2rem; }
-        section { background: white; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    
+        section { 
+            background: white; 
+            padding: 2rem; 
+            margin-bottom: 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            /* Apply animation to all sections */
+            animation: fadeInUp 1s ease-out both;
+        }
+    
+        /* 2. ADD DELAYS FOR A STAGGERED EFFECT */
+        #about { animation-delay: 0.2s; }
+        #featured-project { animation-delay: 0.4s; }
+        #skills { animation-delay: 0.6s; }
+        #certifications { animation-delay: 0.8s; }
+    
         h1 { margin: 0; font-size: 2.5rem; }
         h2 { color: var(--primary); border-bottom: 2px solid var(--light); padding-bottom: 0.5rem; }
-        .project-card { border-left: 5px solid var(--primary); padding-left: 1.5rem; margin-top: 1rem; }
-        .tag { background: #e8f0fe; color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-right: 0.5rem; display: inline-block; margin-top: 0.5rem; }
-        .contact-btn { display: inline-block; background: white; color: var(--primary); padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
+    
+        .project-card { 
+            border-left: 5px solid var(--primary); 
+            padding-left: 1.5rem; 
+            margin-top: 1rem;
+            transition: transform 0.3s ease; /* Hover animation */
+        }
+    
+        /* 3. HOVER EFFECT FOR YOUR PROJECT */
+        .project-card:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+    
+        .tag { 
+            background: #e8f0fe; 
+            color: var(--primary); 
+            padding: 0.2rem 0.6rem; 
+            border-radius: 4px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            margin-right: 0.5rem; 
+            display: inline-block; 
+            margin-top: 0.5rem;
+            transition: background 0.3s;
+        }
+    
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+    
+        .contact-btn { 
+            display: inline-block; 
+            background: white; 
+            color: var(--primary); 
+            padding: 0.8rem 1.5rem; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            margin-top: 1rem;
+            transition: box-shadow 0.3s;
+        }
+    
+        .contact-btn:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    
         .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
         footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #70757a; }
     </style>
